@@ -8,7 +8,7 @@ import java.util.Arrays;
 /**
  * Les méthodes de cette classe mets en œuvre des jeux de cartes destinés à faire des tests.
  * @author Robert Aubé
- * @version 1.0 (Date de création: 2023-03-28)
+ * @version 1.1 
  */
 public class JeuxDeCartes {
     private static final Carte[]quatreAs = {
@@ -17,7 +17,18 @@ public class JeuxDeCartes {
             new Carte(ValeurCartes.V_AS, CouleurCartes.TREFLE),
             new Carte(ValeurCartes.V_AS, CouleurCartes.PIQUE),
     };
+	
+    private static final Carte[]petitJeu1 = {
+            new Carte(ValeurCartes.V_3, CouleurCartes.COEUR),
+            new Carte(ValeurCartes.V_4, CouleurCartes.COEUR),
+            new Carte(ValeurCartes.V_5, CouleurCartes.COEUR),
+    };
 
+    private static final Carte[]petitJeu2 = {
+            new Carte(ValeurCartes.V_3, CouleurCartes.PIQUE),
+            new Carte(ValeurCartes.V_4, CouleurCartes.PIQUE),
+            new Carte(ValeurCartes.V_5, CouleurCartes.PIQUE),
+    };
     /**
      * Créer un jeu de carte normal
      * @return un jeu de carte normal
@@ -33,12 +44,8 @@ public class JeuxDeCartes {
      */
     public static PaquetDeCartes getJeuPresqueFini() {
         ArrayList listeCartes = new ArrayList(Arrays.asList(quatreAs));
-        Carte[]petitJeu = {
-                new Carte(ValeurCartes.V_3, CouleurCartes.COEUR),
-                new Carte(ValeurCartes.V_4, CouleurCartes.COEUR),
-                new Carte(ValeurCartes.V_5, CouleurCartes.COEUR),
-        };
-        listeCartes.addAll(Arrays.asList(petitJeu));
+
+        listeCartes.addAll(Arrays.asList(petitJeu1));
 
         return (new PaquetDeCartes(listeCartes));
     }
